@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1= Login
+  .center-panel
+    p HackerBay
+    form(name="login", method="post")
+        div.input
+            input(type="text", placeholder="Username", name="username")
+        div.input
+            input(type="password", placeholder="Password", name="password")
+        div.actions
+            input(class="submit-b",type="submit", value="Login")
