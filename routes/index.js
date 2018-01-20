@@ -4,8 +4,7 @@ var path = require('path');
 var jwt = require('jsonwebtoken');
 var jpatch = require('jsonpatch');
 var jimp = require('jimp');
-
-var secret = "seghvjbnmoj89y786g53wc56h898l90k"
+var secret = require('../config.js')['secret']
 
 var result_object = { 
   // This is a response object for sending after request
