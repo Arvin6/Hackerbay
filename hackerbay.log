@@ -1,0 +1,15 @@
+{"message":"Patch must be an array of operations","level":"info","timestamp":"2018-01-20T17:10:03.011Z"}
+{"message":"Path not found in document","level":"info","timestamp":"2018-01-20T17:10:03.014Z"}
+{"message":"JSONPointer must start with a slash (or be an empty string)!","level":"info","timestamp":"2018-01-20T17:10:03.018Z"}
+{"message":"Patch must be an array of operations","level":"info","timestamp":"2018-01-20T17:14:28.520Z"}
+{"message":"Path not found in document","level":"info","timestamp":"2018-01-20T17:14:28.523Z"}
+{"message":"JSONPointer must start with a slash (or be an empty string)!","level":"info","timestamp":"2018-01-20T17:14:28.525Z"}
+{"message":"Patch must be an array of operations","level":"info","timestamp":"2018-01-20T17:14:55.223Z"}
+{"message":"Path not found in document","level":"info","timestamp":"2018-01-20T17:14:55.224Z"}
+{"message":"JSONPointer must start with a slash (or be an empty string)!","level":"info","timestamp":"2018-01-20T17:14:55.226Z"}
+{"message":"Patch must be an array of operations","level":"info","timestamp":"2018-01-20T17:15:28.436Z"}
+{"message":"Path not found in document","level":"info","timestamp":"2018-01-20T17:15:28.438Z"}
+{"message":"JSONPointer must start with a slash (or be an empty string)!","level":"info","timestamp":"2018-01-20T17:15:28.442Z"}
+{"message":"Patch must be an array of operations","level":"info","timestamp":"2018-01-20T17:16:22.560Z"}
+{"message":"Path not found in document","level":"info","timestamp":"2018-01-20T17:16:22.563Z"}
+{"message":"JSONPointer must start with a slash (or be an empty string)!","level":"info","timestamp":"2018-01-20T17:16:22.566Z"}

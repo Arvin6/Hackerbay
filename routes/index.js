@@ -5,6 +5,19 @@ var jwt = require('jsonwebtoken');
 var jpatch = require('jsonpatch');
 var jimp = require('jimp');
 var secret = require('../config.js')['secret']
+var winston = require('winston')
+
+winston.configure({
+  transports: [
+    new (winston.transports.Console)({name: 'debug-console',
+    level: 'debug',
+    prettyPrint: true,
+    handleExceptions: true,
+    json: false,
+    colorize: true}),
+    new (winston.transports.File)({ filename: 'hackerbay.log' })
+  ]
+});
 
 var result_object = { 
   // This is a response object for sending after request
@@ -19,7 +32,7 @@ function authenticate(req, res, next){
   token = req.headers.authorization
   jwt.verify(token, secret, function(err, payload){
     if (err){
-      console.log(err)
+      winston.error(err)
       return res.send('Authentication Error', 401)
     }
     return next()
@@ -38,7 +51,6 @@ router.get('/image_thumbnail', authenticate, function(req,res){
   if(!req.query.image_url){
     throw 'image_url field is required.'
   }
-  img_loc = path.join(__dirname, '../public/images/temp', Date.now()+'.png')
   let image_url = req.query.image_url
   jimp.read(image_url, function(err, image){
     if (err){
@@ -53,9 +65,11 @@ router.get('/image_thumbnail', authenticate, function(req,res){
       return res.sendFile(img_loc)    
     })
   })
+  // taking advantage of Async
+  let img_loc = path.join(__dirname, '../public/images/temp', Date.now()+'.png')
 }
 catch(err){
-  console.log(err)
+  winston.info(err)
   res.set({'content-type':'application/json'})
   res.status(400)
   result['data'] = null
@@ -81,7 +95,7 @@ router.post('/json_patch', authenticate, function(req, res){
   res.status(200)
   }
   catch(err){
-    console.log(err)
+    winston.info(err)
     result['data'] = null
     result['success'] = false
     result['message'] = err.message
@@ -116,6 +130,7 @@ router.post('/login', function(req, res){
   res.render('index',{title:'HackerBay'})
 }
 catch(err){
+  winston.info(err)
   result['data'] = null
   result['success'] = false
   result['message'] = err

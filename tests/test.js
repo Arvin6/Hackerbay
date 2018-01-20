@@ -17,6 +17,20 @@ it("Login", function(done){
         done()
     })
 })
+
+it("Failure - No JWT", function(done){
+    image_data = ''
+    chai.request(base_url)
+.get('/image_thumbnail?image_url='+image_data)
+.set('authorization','')
+.send(data)
+.end(function(err, res){
+    expect(res.text).to.equal('Authentication Error')
+    expect(res.status).to.equal(401)
+    done()
+})
+})
+
 });
 
 describe("Image Thumbnail", function(){

@@ -23,7 +23,8 @@
     "mocha": "5.0.0",
     "morgan": "~1.0.0",
     "nyc": "^11.4.1",
-    "static-favicon": "~1.0.0"
+    "static-favicon": "~1.0.0",
+    "winston": "^2.4.0"
   },
   "devDependencies": {
     "eslint-config-google": "^0.9.1",
