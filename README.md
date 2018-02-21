@@ -1,4 +1,4 @@
-# HackerBay
+# Authentication - JWT - Example
 
 -> Clone repository
 -> npm install
